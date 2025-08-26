@@ -14,9 +14,10 @@
         <p>
           <a href='${ROOT}/'>Home</a> |
           <a href='${ROOT}/about.html'>About</a> |
+          <a href='https://github.com/so-dang-cool/nobodyuses.org'>Source</a> |
           <a href='${ROOT}/blog/'>Blog</a>
         </p>
-        <em>Written by a cat on the internet</em>
+        <em>Started by Justin Hill, continued by viewers like you</em>
       </footer>
     </div>
   </body>
