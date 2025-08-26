@@ -1,0 +1,21 @@
+on: [ push, workflow_dispatch ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/configure-pages@v5
+      - uses: jdx/mise-action@v3
+      - run: ./gen.sh
+      - uses: actions/upload-pages-artifact@v4
+        with: { path: '.' }
+      - uses: actions/deploy-pages@v4
