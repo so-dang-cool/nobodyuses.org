@@ -2,7 +2,7 @@
 
 ## Facebook
 
-Majority implemented in PHP, has moved to running PHP and Hack on [Hack](https://hacklang.org/)'s virtual machine.
+Majority implemented in PHP, has moved to running PHP and Hack on [Hack](https://hacklang.org/)'s virtual machine
 
 ## WordPress
 
@@ -14,3 +14,6 @@ second only to Linux as the web's most ubiquitous software.
 * Etsy
 * Tumblr
 * Mailchimp
+
+
+[wp-mkt]: https://kinsta.com/wordpress-market-share/

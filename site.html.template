@@ -13,9 +13,8 @@
       <footer>
         <p>
           <a href='${ROOT}/'>Home</a> |
-          <a href='${ROOT}/about.html'>About</a> |
-          <a href='https://github.com/so-dang-cool/nobodyuses.org'>Source</a> |
-          <a href='${ROOT}/blog/'>Blog</a>
+          <a href='${ROOT}/readme/'>About</a> |
+          <a href='https://github.com/so-dang-cool/nobodyuses.org'>Contribute</a>
         </p>
         <em>Started by Justin Hill, continued by viewers like you</em>
       </footer>
