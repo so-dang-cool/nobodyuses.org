@@ -10,7 +10,7 @@ cd "$sources_root" || exit 1
 # Clean before we start
 
 find "$sources_root" -type f -name '*.html' -delete
-find "$sources_root" -type f -name 'page-list*' -delete
+find "$sources_root" -type f -name 'sitemap*' -delete
 
 # Generate pages
 
@@ -47,7 +47,7 @@ find "$sources_root" -type f -name 'page-list*' -delete
       <"$site_template" \
       >"$path/$dest"
 
-    echo "$(echo "$dest" | sed 's/index\.html$//')$RS$TITLE" >> "$path/page-list"
+    echo "$(echo "$dest" | sed 's/index\.html$//')$RS$TITLE" >> "$path/sitemap"
   done <tmp
   rm tmp
 }
@@ -55,7 +55,7 @@ find "$sources_root" -type f -name 'page-list*' -delete
 # Generate page lists
 
 {
-  find . -type f -name page-list >tmp
+  find . -type f -name sitemap >tmp
   while IFS= read -r list
   do
     path="$(dirname "$list")"
@@ -63,11 +63,17 @@ find "$sources_root" -type f -name 'page-list*' -delete
 
     if [ -f "$path/$dest" ]
     then
-      dest=page-list.html
+      dest=sitemap.html
     fi
 
-    TITLE='Entries'
-    CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\""$1"\">"$2"</a></li>") }')</ul>"
+    if [ "$path" = '.' ]
+    then
+      TITLE="Sitemap"
+    else
+      TITLE="Category: $(basename "$path" | tr '-' ' ' )"
+    fi
+
+    CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
     ROOT="$(dirname "$path/$dest" | sed -E 's/\/[^\/]+/\/../g')"
 
     export TITLE
