@@ -5,4 +5,4 @@ This site is a crowd-sourced catalog of notable software use.
 
 # Categories
 
-* [programming-languages](/programming-languages/)
+* [Programming Languages](/programming-languages/)
