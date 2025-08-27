@@ -4,8 +4,8 @@
 >
 > _Alan Kay, 2011 ([Programming and Scaling][kay-2011])_
 
-> "[Programming]'s a fashion industry. Trends come; trends go. The lack of
-> historical awareness is considered by most to be a feature."
+> [Programming]'s a fashion industry. Trends come; trends go. The lack of
+> historical awareness is considered by most to be a feature.
 >
 > _Baldur Bjarnason, 2022 ([Programming is a Pop Culture][baldur-2022])_
  
