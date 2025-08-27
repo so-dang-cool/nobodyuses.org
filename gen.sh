@@ -70,7 +70,7 @@ find "$sources_root" -type f -name 'sitemap*' -delete
     then
       TITLE="Sitemap"
     else
-      TITLE="Category: $(basename "$path" | tr '-' ' ' )"
+      TITLE="Nobody Uses: $(basename "$path" | tr '-' ' ' )"
     fi
 
     CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
