@@ -18,7 +18,7 @@ find "$sources_root" -type f -name 'sitemap*' -delete
   find . -type f -name '*.md' >tmp
   while IFS= read -r content
   do
-    path="$(dirname "$content")"
+    path="$(dirname "$content" | tr '[:upper:]' '[:lower:]')"
     TITLE="$(basename "$content" | cut -d '.' -f 1)"
     date="$(expr "$TITLE" : '\([[:digit:]]*-[[:digit:]]*-[[:digit:]]*\)')"
 
@@ -61,16 +61,18 @@ find "$sources_root" -type f -name 'sitemap*' -delete
     path="$(dirname "$list")"
     dest=index.html
 
-    if [ -f "$path/$dest" ]
-    then
-      dest=sitemap.html
-    fi
-
     if [ "$path" = '.' ]
     then
       TITLE="Sitemap"
     else
       TITLE="Nobody Uses these $(basename "$path" | tr '-' ' ' )"
+    fi
+
+    path="$(echo "$path" | tr '[:upper:]' '[:lower:]')"
+
+    if [ -f "$path/$dest" ]
+    then
+      dest=sitemap.html
     fi
 
     CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
