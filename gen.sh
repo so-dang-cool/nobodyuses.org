@@ -33,7 +33,6 @@ find "$sources_root" -type f -name 'page-list*' -delete
     case "$postname" in
       *.index) dest=index.html ;;
       *)       filename="$(echo "$postname" | rev | cut -d '.' -f 1 | rev)"
-               >&2 echo "post-to-filename: $postname -> $filename"
                mkdir -p "$path/$filename"
                dest="$filename/index.html" ;;
     esac
