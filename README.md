@@ -1,13 +1,13 @@
 # nobodyuses.org
 
-> _"Computing has turned into pop culture"_
+> Computing has turned into pop culture
 >
-> Alan Kay, 2011 ([Programming and Scaling][kay-2011])
+> _Alan Kay, 2011 ([Programming and Scaling][kay-2011])_
 
-> _"[Programming]'s a fashion industry. Trends come; trends go. The lack of
-> historical awareness is considered by most to be a feature."_
+> "[Programming]'s a fashion industry. Trends come; trends go. The lack of
+> historical awareness is considered by most to be a feature."
 >
-> Baldur Bjarnason, 2022 ([Programming is a Pop Culture][baldur-2022])
+> _Baldur Bjarnason, 2022 ([Programming is a Pop Culture][baldur-2022])_
  
 Over and over [I][bp] hear remarks like "Ruby is dead" or "nobody really uses C
 anymore" _even in the comment section of [GitHub][gh]_, a massive Ruby on Rails
