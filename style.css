@@ -5,5 +5,6 @@ header, footer { text-align: center; }
 
 /* Theme */
 body { color: #321; background-color: #edc; }
+blockquote { border-left: solid .25em #321a; padding-left: 1em; }
 
 a { color: #642; text-decoration: none; font-weight: bolder; }
