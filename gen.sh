@@ -48,7 +48,7 @@ find "$sources_root" -type f -name 'page-list*' -delete
       <"$site_template" \
       >"$path/$dest"
 
-    echo "$(echo "$dest" | sed 's/index.html$//')$RS$TITLE" >> "$path/page-list"
+    echo "$(echo "$dest" | sed 's/index\.html$//')$RS$TITLE" >> "$path/page-list"
   done <tmp
   rm tmp
 }
@@ -67,7 +67,7 @@ find "$sources_root" -type f -name 'page-list*' -delete
       dest=page-list.html
     fi
 
-    TITLE='Page List'
+    TITLE='Entries'
     CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\""$1"\">"$2"</a></li>") }')</ul>"
     ROOT="$(dirname "$path/$dest" | sed -E 's/\/[^\/]+/\/../g')"
 
