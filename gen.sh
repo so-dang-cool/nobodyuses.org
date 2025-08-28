@@ -51,12 +51,11 @@ find "$sources_root" -type f -name 'sitemap*' -delete
   while IFS= read -r list
   do
     path="$(dirname "$list")"
+    dest=index.html
 
     if [ -f "$path/$dest" ]
     then
       dest=sitemap.html
-    else
-      dest=index.html
     fi
 
     if [ -f "$path/.title" ]
