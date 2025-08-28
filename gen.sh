@@ -18,16 +18,8 @@ find "$sources_root" -type f -name 'sitemap*' -delete
   find . -type f -name '*.md' >tmp
   while IFS= read -r content
   do
-    path="$(dirname "$content" | tr '[:upper:]' '[:lower:]')"
+    path="$(dirname "$content")"
     TITLE="$(basename "$content" | cut -d '.' -f 1)"
-    date="$(expr "$TITLE" : '\([[:digit:]]*-[[:digit:]]*-[[:digit:]]*\)')"
-
-    if [ -n "$date" ]
-    then
-      TITLE="$date $(echo "$TITLE" | cut -d '-' -f 4- | sed 's/-/ /g')"
-    else
-      TITLE="$(echo "$TITLE" | sed 's/-/ /g')"
-    fi
 
     postname="$(basename "$content" .md | tr '[:upper:]' '[:lower:]')"
     case "$postname" in
@@ -59,22 +51,22 @@ find "$sources_root" -type f -name 'sitemap*' -delete
   while IFS= read -r list
   do
     path="$(dirname "$list")"
-    dest=index.html
-
-    if [ "$path" = '.' ]
-    then
-      TITLE="Sitemap"
-    else
-      TITLE="Nobody Uses these $(basename "$path" | tr '-' ' ' )"
-    fi
-
-    path="$(echo "$path" | tr '[:upper:]' '[:lower:]')"
 
     if [ -f "$path/$dest" ]
     then
       dest=sitemap.html
+    else
+      dest=index.html
     fi
 
+    if [ -f "$path/.title" ]
+    then
+      things="$(cat "$path/.title")"
+    else
+      things=Things
+    fi
+
+    TITLE="Nobody Uses these $things"
     CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
     ROOT="$(dirname "$path/$dest" | sed -E 's/\/[^\/]+/\/../g')"
 
