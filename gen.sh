@@ -19,7 +19,7 @@ find "$sources_root" -type f -name 'sitemap*' -delete
   while IFS= read -r content
   do
     path="$(dirname "$content")"
-    TITLE="$(basename "$content" | cut -d '.' -f 1)"
+    TITLE="$(basename "$content" | cut -d '.' -f 1 | tr '-' ' ')"
 
     postname="$(basename "$content" .md | tr '[:upper:]' '[:lower:]')"
     case "$postname" in
