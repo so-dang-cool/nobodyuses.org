@@ -12,6 +12,11 @@ cd "$sources_root" || exit 1
 find "$sources_root" -type f -name '*.html' -delete
 find "$sources_root" -type f -name 'sitemap*' -delete
 
+if [ "$1" = "clean" ]
+then
+  exit
+fi
+
 # Generate pages
 
 {

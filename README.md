@@ -37,6 +37,12 @@ discussed less doesn't mean it's worse.
 
 Learn, teach, and make things you can be proud of.
 
+---
+
+Related sites and sources:
+
+- [Built With](https://builtwith.com)
+
 
 
 [baldur-2022]: https://baldurbjarnason.com/2022/programming-is-a-pop-culture/

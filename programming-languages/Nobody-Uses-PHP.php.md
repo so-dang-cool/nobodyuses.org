@@ -15,5 +15,10 @@ Majority implemented in PHP, has moved to running PHP and Hack on
 * Tumblr
 * Mailchimp
 
+See also:
+
+- [Awesome PHP Jobs (GitHub)](https://github.com/filhodanuvem/awesome-php-jobs)
+- [London PHP Jobs (GitHub)](https://github.com/alister/php-in-london)
+
 
 [wp-mkt]: https://kinsta.com/wordpress-market-share/
