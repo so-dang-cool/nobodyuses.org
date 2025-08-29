@@ -5,4 +5,5 @@ This site is a crowd-sourced catalog of notable software use.
 
 # Categories
 
+* [Build Tools](/build-tools/)
 * [Programming Languages](/programming-languages/)
