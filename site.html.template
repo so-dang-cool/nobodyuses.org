@@ -12,9 +12,13 @@
       <hr>
       <footer>
         <p>
+          <a href='https://github.com/nobodyuses/nobodyuses.org${SOURCE}'>✏️ Suggest an edit</a>
+        </p>
+        <p>
           <a href='${ROOT}/'>Home</a> |
           <a href='${ROOT}/readme/'>About</a> |
-          <a href='https://github.com/nobodyuses/nobodyuses.org'>Contribute</a>
+          <a href='https://github.com/nobodyuses/nobodyuses.org'>Contribute</a> |
+          <a href='https://github.com/sponsors/nobodyuses'>Sponsor</a>
         </p>
         <em>Started by Justin Hill, continued by viewers like you</em>
       </footer>

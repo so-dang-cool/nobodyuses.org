@@ -31,10 +31,12 @@ find "$sources_root" -type f -name 'sitemap*' -delete
 
     CONTENT="$(pandoc --from commonmark --to html5 "$content")"
     ROOT="$(dirname "$path/$dest" | sed -E 's/\/[^\/]+/\/../g')"
+    SOURCE="/edit/core/$(echo "$content" | sed -E 's/^\.\///')"
 
     export TITLE
     export CONTENT
     export ROOT
+    export SOURCE
     envsubst \
       <"$site_template" \
       >"$path/$dest"
@@ -68,10 +70,12 @@ find "$sources_root" -type f -name 'sitemap*' -delete
     TITLE="Nobody Uses these $things"
     CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
     ROOT="$(dirname "$path/$dest" | sed -E 's/\/[^\/]+/\/../g')"
+    SOURCE=""
 
     export TITLE
     export CONTENT
     export ROOT
+    export SOURCE
     envsubst \
       <"$site_template" \
       >"$path/$dest"
