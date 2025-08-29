@@ -2,5 +2,4 @@ This page could use some content!
 
 See also:
 
-- [Elixir Companies (GitHub)](https://github.com/beam-community/elixir-companies)
 - [Japanese Erlang/Elixir Companies (GitHub)](https://github.com/voluntas/japanese-erlang-elixir-companies)
