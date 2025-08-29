@@ -73,7 +73,7 @@ fi
     fi
 
     TITLE="Nobody Uses these $things"
-    CONTENT="<ul>$(sort -r "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
+    CONTENT="<ul>$(sort "$list" | awk -F "$RS" 'NF { print("<li><a href=\"./"$1"\">"$2"</a></li>") }')</ul>"
     ROOT="$(dirname "$path/$dest" | sed -E 's/\/[^\/]+/\/../g')"
     SOURCE=""
 
